@@ -56,7 +56,7 @@ def search(request):
 
 
 def newPage(request):
-    return render(request,"encylopedia/newPage.html")
+    return render(request,"encyclopedia/newPage.html")
 
 def save(request):
     if request.methos =='POST':
