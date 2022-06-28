@@ -1,8 +1,8 @@
 from this import s
 from django.shortcuts import render
-
 from . import util
-import markdown #using pip install
+import markdown 
+#using pip install
 import random #random module
 
 
@@ -19,7 +19,7 @@ def convert_to_HTML(title):
     return html
 
 
-    def entry(request,title):
+def entry(request,title):
         entryPage=util.get_entry(title)
         if entryPage is None: 
             return render(request,"encyclopedia/nonExistingEntry.html",{
@@ -30,6 +30,7 @@ def convert_to_HTML(title):
                     "entry": convert_to_HTML(title),
                     "entryTitle":title
                 })
+
 def search(request):
     if request.method=='GET':
         input=request.GET.get('q')

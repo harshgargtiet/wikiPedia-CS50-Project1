@@ -1,12 +1,16 @@
 import re
-
+#re stands for regular expressions.
+from django.shortcuts import render
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+from django.http import HttpResponse
+from django.template import Context, loader
+
 
 
 def list_entries():
     """
-    Returns a list of all names of encyclopedia entries.
+    Returns a list of all names of encyclopedia entries.so
     """
     _, filenames = default_storage.listdir("entries")
     return list(sorted(re.sub(r"\.md$", "", filename)
